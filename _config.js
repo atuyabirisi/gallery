@@ -1,35 +1,29 @@
-const { MongoClient } = require("mongodb");
+const mongoose = require("mongoose");
 
-async function connectDB() {
+const connectToDB = async () => {
   let uri;
 
   switch (process.env.NODE_ENV) {
     case "test":
       uri = process.env.DB_URL_TEST;
       break;
-    case "development":
-      uri = process.env.DB_URL_DEV;
-      break;
     case "production":
       uri = process.env.DB_URL_PROD;
+      break;
+    case "development":
+      uri = process.env.DB_URL_DEV;
       break;
     default:
       uri = process.env.DB_URL_DEV;
   }
 
-  const client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-
   try {
-    await client.connect();
-
-    await client.db("darkroom").command({ ping: 1 });
-    console.log("connected to MongoDB!");
+    await mongoose.connect(uri);
+    console.log("Connected to MongoDB!");
   } catch (error) {
-    console.error(error);
+    console.log(error.message);
+    process.exit(1);
   }
-}
+};
 
-module.exports = connectDB;
+module.exports = connectToDB;
