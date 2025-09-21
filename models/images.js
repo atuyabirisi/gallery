@@ -1,16 +1,14 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { Schema, model } = require("mongoose");
 
 // create a schema for our database
-var imageSchema = new Schema({
-    name: String,
-    path: String,
-    size: Number,
-    date: {type: Date, default: Date() }
-
+const imageSchema = new Schema({
+  name: String,
+  path: String,
+  size: Number,
+  date: { type: Date, default: Date() },
 });
 
 // convert the schema into a Model
-let Image = mongoose.model('Image', imageSchema);
+const Image = model("Image", imageSchema);
 
 module.exports = Image;
