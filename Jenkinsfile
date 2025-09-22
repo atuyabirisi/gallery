@@ -14,13 +14,19 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Start the Server') {
-            steps {
-                sh 'npm start &'
-                sh 'echo $! > server.pid'
-                sh 'sleep 10'
-                sh 'kill $(cat server.pid) || true'
+        stage("Deploy to Render"){ 
+            steps{
+                withCredentials([string(credentialsId: 'render_api_key', variable: 'RENDER_API_KEY')]) {
+                    sh """
+                        curl -X POST \
+                        -H "Accept: application/json" \
+                        -H "Authorization: Bearer $RENDER_API_KEY" \
+                     https://api.render.com/v1/services/srv-d38ljl7diees73cm50b0/deploys
+                """ 
+                }
             }
         }
     }
 }
+
+
