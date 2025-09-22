@@ -4,8 +4,6 @@ const uuid = require("uuid");
 let upload = require("./upload");
 const Image = require("../models/images");
 
-var db = [];
-
 router.get("/", async (req, res) => {
   try {
     const images = await Image.find();
@@ -34,9 +32,11 @@ router.post("/upload", (req, res) => {
       });
 
       await newImage.save();
+
       res.redirect("/?msg=File uploaded successfully");
     } catch (saveErr) {
       console.error(saveErr);
+
       res.redirect("/?msg=Error saving file to database");
     }
   });
