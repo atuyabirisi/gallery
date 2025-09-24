@@ -1,8 +1,18 @@
-### Darkroom - SSR Image Upload Application
+### Project Overview
 
-A server-side rendered (SSR) Node.js application for uploading and viewing images.
+This project focused on building a Jenkins Declarative Pipeline to automate the deployment of a Node.js application to Render, integrated with MongoDB Atlas, tests, Slack notifications, and Git version control. The work was structured into four milestones, each adding new capabilities to the pipeline.
 
----
+In addition to Jenkins, I also demonstrated core Git workflows, including:
+
+- Forking and cloning a repository.
+
+- Adding changes to the staging area.
+
+- Committing with meaningful messages.
+
+- Pushing changes to GitHub to trigger the Jenkins pipeline.
+
+Once the pipeline completed successfully, the deployment on Render was automatically updated, ensuring continuous delivery.
 
 #### Features
 
