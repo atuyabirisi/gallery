@@ -20,12 +20,6 @@ pipeline {
                 sh 'npm install'
             }
         }
-
-        // stage("Run Tests") {
-        //     steps {
-        //         sh 'npm test'
-        //     }
-        // }
         stage("Deploy to Render") { 
             steps {
                 withCredentials([string(credentialsId: 'render_api_key', variable: 'RENDER_API_KEY')]) {
@@ -55,3 +49,5 @@ pipeline {
         }
     }
 }
+
+
