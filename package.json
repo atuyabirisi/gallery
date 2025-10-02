@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest --watchAll --verbose"
+    "test:watch": "jest --watchAll --verbose",
+    "start": "node server.js",
+    "test": "jest --verbose"
   },
   "keywords": [],
   "author": "",
