@@ -81,3 +81,8 @@ Follow the following steps to run this project locally
 When the pipeline completes successfully, the deployment on Render updates automatically, ensuring continuous delivery.
 
 [deploment url](https://devops-ip-1.onrender.com/)
+
+#### Slack Notifications
+
+The pipeline sends real-time build updates to the team's slack channel
+![Build Success](assests/slack_notification.png)
