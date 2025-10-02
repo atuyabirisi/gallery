@@ -18,7 +18,7 @@ By connecting Jenkins to Slack, the team receives instant notifications on build
 - npm
 - Database: MongoDB Atlas
 - Jenkins (preferably running as a container )
-- ngrok - for generating a public URL for Github webhooks
+- ngrok - for generating a Jenkins public URL for Github webhooks
 - Github webhook configured to point to the Jenkins server(using the Jenkins public URL).
 - Slack integration with Jenkins
 
