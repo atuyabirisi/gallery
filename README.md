@@ -85,4 +85,4 @@ When the pipeline completes successfully, the deployment on Render updates autom
 #### Slack Notifications
 
 The pipeline sends real-time build updates to the team's slack channel
-![Build Success](assests/slack_notification.png)
+![Build Success](assests/slack_success.png)
