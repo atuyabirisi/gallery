@@ -62,7 +62,7 @@ Follow the following steps to run this project locally
 
 - On the repo -> settings -> webhooks
 - Add new webhook with:
-  - payload url = <ngrok-jenkins-url>/github-web-hook/
+  - payload url = ngrok-jenkins-url/github-web-hook/
   - content type = application/json
   - Trigger - just the push event
 
