@@ -1,10 +1,10 @@
-### Project Overview
+#### Project Overview
 
 This project focuses on building a Jenkins Declarative Pipeline to automate the deployment of a Node.js application to Render, integrated with MongoDB Atlas, automated testing, Slack notifications, and Git version control.
 
 By connecting Jenkins to Slack, the team receives instant notifications on build successes or failures — promoting faster collaboration and quicker issue resolution.
 
-### Highlights
+#### Highlights
 
 - Automates builds and deployments using Jenkins
 - Integrates Slack for real-time pipeline notifications (success/failure).
