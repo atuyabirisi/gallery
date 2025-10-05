@@ -1,16 +1,21 @@
-#### Project Overview
+#### Continuous Deployment Pipeline Overview
 
-This project focuses on building a Jenkins Declarative Pipeline to automate the deployment of a Node.js application to Render, integrated with MongoDB Atlas, automated testing, Slack notifications, and Git version control.
-
-By connecting Jenkins to Slack, the team receives instant notifications on build successes or failures — promoting faster collaboration and quicker issue resolution.
+This project demonstrates a Continuous Deployment (CD) pipeline built with Jenkins to automate the full software delivery process — from code commit to live deployment. Once a push is made to the main branch on GitHub, a configured webhook triggers the Jenkins pipeline automatically.
 
 #### Highlights
 
-- Automates builds and deployments using Jenkins
-- Integrates Slack for real-time pipeline notifications (success/failure).
-- Configures Github webhook to trigger the Jenkins pipeline on every push
-- Uses ngrok to expose Jenkins running locally (Github webhooks require live urls)
-- Implements continuous delivery with automatic updates to the Render deployment once the pipeline runs successfully
+The pipeline then executes a series of defined stages:
+
+1. Clone Repository – retrieves the latest code from GitHub.
+
+2. Install Dependencies – installs all required Node.js packages.
+
+3. Run Tests – runs automated tests to ensure application stability.
+
+4. Deploy to Render – if all tests pass, the new build is automatically deployed to the Render hosting platform using its API.
+5. Slack integration ensures the team receives real-time notifications on build status — whether successful or failed
+
+This pipeline achieves true Continuous Deployment (CD), ensuring that every code change passing the tests is automatically pushed to production. This approach significantly improves delivery speed, release reliability
 
 #### Requirements to Run Project Locally
 
